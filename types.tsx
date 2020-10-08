@@ -1,17 +1,24 @@
+import DeckOverview from "./screens/DeckOverviewScreen";
+import AddCard from './screens/AddCardScreen';
+import Quiz from './screens/QuizScreen';
+
 export type RootStackParamList = {
   Root: undefined;
   NotFound: undefined;
+  DeckOverview: DeckOverview;
+  AddCard: AddCard;
+  Quiz: Quiz;
 };
 
 export type BottomTabParamList = {
-  TabOne: undefined;
-  TabTwo: undefined;
+  Decks: undefined;
+  AddDeck: undefined;
 };
 
 export type TabOneParamList = {
-  TabOneScreen: undefined;
+  DeckList: undefined;
 };
 
 export type TabTwoParamList = {
-  TabTwoScreen: undefined;
+  AddDeck: undefined;
 };
