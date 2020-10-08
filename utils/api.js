@@ -1,6 +1,7 @@
 import AsyncStorage from '@react-native-community/async-storage'
 import { Decks } from './_DATA'
-import {Notifications, Permissions} from 'expo';
+import {Notifications } from 'expo';
+import * as Permissions from 'expo-permissions'
 
 export const DECKS_STORAGE_KEY = 'MobileFlashcards:deck';
 export const NOTIFICATIONS_KEY = 'Notifications:deck'
@@ -86,7 +87,7 @@ export function clearNotification(){
 }
 
 export function setNotification(){
-    AsyncStorage.setItem(NOTIFICATIONS_KEY)
+    AsyncStorage.getItem(NOTIFICATIONS_KEY)
         .then(JSON.parse)
         .then(data => {
             if(data === null){

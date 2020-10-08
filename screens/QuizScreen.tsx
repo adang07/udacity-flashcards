@@ -26,7 +26,7 @@ class Quiz extends React.Component<Props, State>{
         super(props)
         this.state = {
             questions: null,
-            questionNumber: 0,
+            questionNumber: 1,
             showQuestion: true,
             correctAnswers: 0,
             title: null
@@ -42,10 +42,10 @@ class Quiz extends React.Component<Props, State>{
     }
 
     handleCorrect = () => {
-        this.setState((prevState) => ({
+        this.setState(() => ({
             correctAnswers: this.state.correctAnswers + 1,
             questionNumber: this.state.questionNumber + 1,
-            showQuestion: false
+            showQuestion: true,
         }))
     }
 
@@ -58,13 +58,13 @@ class Quiz extends React.Component<Props, State>{
     handleIncorrect = () => {
         this.setState((prevState) => ({
             questionNumber: this.state.questionNumber + 1,
-            showQuestion: false
+            showQuestion: true,
         }))
     }
 
     handleRestart = () => {
         this.setState({
-            questionNumber: 0,
+            questionNumber: 1,
             showQuestion: true,
             correctAnswers: 0
         })
